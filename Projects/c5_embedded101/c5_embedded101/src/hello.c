@@ -89,7 +89,7 @@ void LPIT0_Ch0_IRQHandler (void) {
   LPIT0->MSR |= LPIT_MSR_TIF0_MASK; /* Clear LPIT0 timer flag 0 */
          /* Perform read-after-write to ensure flag clears before ISR exit */
   lpit0_ch0_flag_counter++;         /* Increment LPIT0 timeout counter */
-  ((GPIO_map_tp) PORT_D)->PTOR |= 1<<16;                /* Toggle output on port D0 (blue LED) */
+  ((GPIO_map_tp) PORT_D)->PTOR |= 1<<15;                /* Toggle output on port D0 (blue LED) */
 }
 
 
